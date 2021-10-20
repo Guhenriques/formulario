@@ -10,11 +10,17 @@ app.get('/', function (req, res) {
 });
  
 app.post('/usuarios', function (req, res) {
-    res.send('<h1>Parabéns! Você preencheu o formulário</h1>');
+    res.send('<h1>Parabéns! Usuário incluído</h1>');
     console.log(req.body)
 });
+
+app.post('/usuarios/:id', function (req, res) {
+    res.send('<h1>Parabéns! Usuário alterado</h1>');
+    console.log(req.body)
+    console.log(req.params.id) 
+});
  
-app.listen(8080, function () {
+app.listen(3003, function () {
     console.log(('Server on e porta aberta!'));
 
 });
